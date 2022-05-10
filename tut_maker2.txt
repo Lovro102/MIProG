@@ -1,0 +1,20 @@
+1Welcome to the level making tutorial! This is gonna teach you how you can make your own levels for the game.
+1You start level creation by inputing level width and height into designated places. These have to be integers greater than 0. It's reccomended to have width and height less than 50-ish (it's just a reccomendation, you can go totally wild). Keep in mind that the product of width and height has to be greater than or equal to 4 as there are 4 things a level cannot be created without.
+1If everything goes as planed, you should see another window with a grid on the right side and a menu on the left side.
+2You can select an object from the menu on the left and place the object into the grid by clicking on one of the valid places.
+Your grid will have its borders full of wall objects - you can't place any other objects there as they are the level's borders.
+7Here is a list explaining the meaning of each symbol:
+'\033[1;32;40mo\033[0;37;40m' | '\033[1;35;40mo\033[0;37;40m' - player charachter
+'\033[1;32;40m•\033[0;37;40m' | '\033[1;35;40m•\033[0;37;40m' - console for inputing the secret code (key)
+'\033[1;32;40m÷\033[0;37;40m' | '\033[1;35;40m÷\033[0;37;40m' - teleporter (exit)
+'#' - wall
+'\033[1;31;40m~\033[0;37;40m' - MIProG charachter (enemy)
+Each player has their own console and teleporter as indicated by their colour.
+1Some objects can be placed unlimited times (walls, MIProGs and empty cells) while others can be placed only once per level (players, consoles and teleporters). If you try to place another object that can exist only one per level, the previous one will be deleted.
+1Before you finish, you should make sure you've placed all 4 of the necessary objects in your level. Those objects are 2 players and their corresponding teleporters (you can't quite play without those).
+2Once you've finished creating your masterpiece, you can save it by clicking the 'Save' button.
+Note: once the level is saved, it cannot be edited
+3You can play your newly created level by navigating through the menu as follows:
+	Play -> Custom levels 
+Your level will be the last one (the highest number)
+1That's it! Now you can use your imagination to create the most difficult or the easiest or the biggest or the impossible levels! (yes, you can totally create impossible levels and it's annoyingly easy)

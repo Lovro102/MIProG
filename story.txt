@@ -1,0 +1,43 @@
+[SHIP'S COMPUTER] Our spaceship was attacked!
+[SHIP'S COMPUTER] MIProGs are already on the ship and are looking for you!
+[SHIP'S COMPUTER] Get to the teleporters so you can escape!
+[SHIP'S COMPUTER] I've marked them in the same colours as your jackets so you know which one is whose
+[SHIP'S COMPUTER] And don't forget to enter your secret code into the consoles if you find any, you won't be able to teleport if you don't
+[SHIP'S COMPUTER] I've marked those too to relieve you of some stress :D
+[SHIP'S COMPUTER] NO TIME FOR SMILEIS!! YOU MUST HURRY! Get of this ship! Go save yourselves! 
+[SHIP'S COMPUTER] Good luck, crew! And remember to work together!
+-
+Level 1: Switch
+Level 2: RUN!
+[SHIP'S COMPUTER] Next level will be dangerous, be careful!
+Level 4: Virtue once was work together
+Level 5: But virtue now is lift alone
+Level 6: Almost impossible
+[SHIP'S COMPUTER] Godspeed, my crew and best of luck...
+Level 8:
+Level 9:
+Level 10: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

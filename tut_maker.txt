@@ -1,0 +1,30 @@
+1Welcome to the level making tutorial! This is gonna teach you how you can make your own levels for the game.
+1You start level creation by inputing level width and height. These have to be integers greater than 0. It's reccomended to have width and height less than 50-ish (it's just a reccomendation, you can go totally wild). Keep in mind that the product of width and height has to be greater than or equal to 4 as there are 4 things a level cannot be created without.
+3If everything goes as planned, you should see an empty level with a cursor set in the top left corner. This is the cursor:
+	_
+The cursor shows you the current position on which you can place an object. The cursor is not actually a part of the level and will not be saved.
+6To move the cursor you can input one of the movement commands:
+'w' - moves the cursor one cell up
+'a' - moves the cursor one cell left
+'s' - moves the cursor one cell down
+'d' - moves the cursor one cell right
+You can move the cursor through the edges of the level.
+9To place an object on the current position you can input one of the commands for the chosen object:
+'player1' / 'p1' / '1' - places 1st player on the current position
+'player2' / 'p2' / '2' - places 2nd player on the current position
+'end1' / '1end' / 'e1' / '1e' / 't1' - places 1st player's teleporter on the current position
+'end2' / '2end' / 'e2' / '2e' / 't2' - places 2nd player's teleporter on the current position
+'key1' / '1key' / 'k1' / '1k' - places 1st players's console on the current position
+'key2' / '2key' / 'k2' / '2k' - places 2nd players's console on the current position
+'miprog' / 'enemy' / 'e' - places a MIProG on the current position
+'wall' / 'x' / '#' - places a wall on the current position
+2If nothing is inputed, an empty cell will be placed on the current position.
+After each input (this does not include movement commands), the cursor moves to the next cell (this also means you can input nothing instead of 'd').
+1Some objects can be placed unlimited times (walls, MIProGs and empty cells) while others can be placed only once per level (players, consoles and teleporters). If you try to place another object that can exist only one per level, the previous one will be deleted.
+1Before you finish, you should make sure you've placed all 4 of the necessary objects in your level. Those objects are 2 players and their corresponding teleporters (you can't quite play without those).
+2Once you've finished creating your masterpiece, you can save it by inputing the command 'save'.
+Note: once the level is saved, it cannot be edited
+3You can play your newly created level by navigating through the menu as follows:
+	Play -> Custom levels 
+Your level will be the last one (the highest number)
+1That's it! Now you can use your imagination to create the most difficult or the easiest or the biggest or the impossible levels! (yes, you can totally create impossible levels and it's annoyingly easy)

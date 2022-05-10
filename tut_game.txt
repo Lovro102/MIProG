@@ -1,0 +1,23 @@
+1Welcome to the gameplay tutorial. Here you will (hopefully) learn how to play the game.
+2This is a 2 player game (more like 2 character game, you can play it solo or with more than 2 people) and these are you, the players, the crew. 
+	\033[1;32;40mo\033[0;37;40m	\033[1;35;40mo\033[0;37;40m
+4Your goal is to get to the teleporters so you can teleport to the next level or to escape the ship. 
+	\033[1;32;40m÷\033[0;37;40m	\033[1;35;40m÷\033[0;37;40m
+Teleporters are colour-coded so you know which teleporter is whose. You can only enter a teleporter of the same colour as your jacket. 
+Important note: once you begin the teleporting process you won't be able to exit until it finishes (both players reach their corresponding teleporters)
+6You can move through the ship by inputing one of the movement commands on your turn (this is a turn based game):
+'w' - moves you 1 cell ahead (up)
+'a' - moves you 1 cell port (left)
+'s' - moves you 1 cell astern (down)
+'d' - moves you 1 cell starboard (right)
+You can also skip your turn by inputing nothing.
+2This is a wall. You can't walk through walls.
+	#
+3Some levels require you to unlock your teleporters with a code before they can be used. To unlock the teleporters you just have to get to the console. (The codes are super secret so, in order to keep them a secret, inputing is done automaticly)
+	\033[1;32;40m•\033[0;37;40m	\033[1;35;40m•\033[0;37;40m
+Just like the teleporters, the consoles are also colour-coded.
+3This is a MIProG, they are the intruders, the enemies. They are chasing you down and are trying to kill you. If they touch either of you, you'll die and lose the game so don't let them.
+	\033[1;31;40m~\033[0;37;40m
+MIProGs will always chase the closest player (even if the player is behind a wall). They cannot access the consoles or use the teleporters but they can still kill you if you're teleporting.
+1As you already know, this is a turn based game - each of the players get 5 turns to move (or to not move...) and then each of the MIProGs get 5 turns. (They will  move. Unless they hit a wall...)
+1That's it! You shold be ready to play the game now! Feel free to restart the tutorial or scroll up if you feel like you've missed something. Good luck!

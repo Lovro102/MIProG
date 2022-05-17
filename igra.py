@@ -242,9 +242,6 @@ def start(stringList, camp=0, firstTime=0):
     
     for thisString in stringList: 
         thisLevel.enemies=reset(l1.p1,l1.p2,l1.enemies)
-        print(thisString)
-##        thisString=thisString.replace("Ă·",p1.endSymb[10])
-##        thisString=thisString.replace("â€˘",p1.keySymb[10])
         thisLevel.load(thisString)
         if camp:
             nLine+=1

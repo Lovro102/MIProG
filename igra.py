@@ -60,16 +60,17 @@ class Level:
         self.genField(width,heigth)
         
         for g in level:
-            if g!='w' and g!='h':
+            if g not in ['w', 'h', "p1", "p2", "e1", "e2", "k1", "k2"]:
                 for obj in level[g]: self.field[obj//width+1][obj%width+1]=g
             for p in [self.p1, self.p2]:
-                if g==p.symb:
+                n=str([self.p1, self.p2].index(p)+1)
+                if g=='p'+n: #p.symb
                     p.pos=level[g][0]
                     self.field[p.pos//width+1][p.pos%width+1]=p.symb
-                elif g==p.keySymb:
+                elif g=='k'+n:
                     p.keyPos=level[g][0]
                     self.field[p.keyPos//width+1][p.keyPos%width+1]=p.keySymb
-                elif g==p.endSymb:
+                elif g=='e'+n:
                     p.endPos=level[g][0]
                     self.field[p.endPos//width+1][p.endPos%width+1]=p.endSymb
             if g==self.enemies[-1].symb:
@@ -144,6 +145,10 @@ class Level:
         for row in range(1,len(self.field)-1):
             for cell in range(1,len(self.field[0])-1):
                 cellValue=self.field[row][cell]
+                for p in [self.p1,self.p2]:
+                    if cellValue==p.symb: cellValue='p'+str([self.p1, self.p2].index(p)+1)
+                    elif cellValue==p.keySymb: cellValue='k'+str([self.p1, self.p2].index(p)+1)
+                    elif cellValue==p.endSymb: cellValue='e'+str([self.p1, self.p2].index(p)+1)
                 if cellValue !=' ':
                     if  cellValue not in savingDict: savingDict[cellValue]=[]
                     savingDict[cellValue].append((row-1)*(len(self.field[0])-2)+cell-1)
@@ -182,7 +187,6 @@ class Enemy:
         if self.pos==p1.pos: p1.dead=True
         elif self.pos==p2.pos: p2.dead=True
         field[self.pos//w+1][self.pos%w+1]=self.symb
-        print(self.symb)
         
 
 def draw(field,name=''):
@@ -216,7 +220,7 @@ def update(p1,p2,crrntLevel):
                     e.move(crrntLevel.field,p1,p2)
                     draw(crrntLevel.field)
                     if p1.dead or p2.dead: return
-                    t.sleep(0.75)
+                    t.sleep(0.5)
 
 def start(stringList, camp=0, firstTime=0):
     storyFile=open("story.txt",'r')
@@ -228,7 +232,7 @@ def start(stringList, camp=0, firstTime=0):
     while lines[nLine].strip()!='-' and camp and firstTime:
         line=lines[nLine]
         print(line)
-        t.sleep(4)
+        t.sleep(3)
         nLine+=1
     line=''
     if camp:
@@ -238,8 +242,9 @@ def start(stringList, camp=0, firstTime=0):
     
     for thisString in stringList: 
         thisLevel.enemies=reset(l1.p1,l1.p2,l1.enemies)
-        thisString=thisString.replace("Ă·",p1.endSymb[10])
-        thisString=thisString.replace("â€˘",p1.keySymb[10])
+        print(thisString)
+##        thisString=thisString.replace("Ă·",p1.endSymb[10])
+##        thisString=thisString.replace("â€˘",p1.keySymb[10])
         thisLevel.load(thisString)
         if camp:
             nLine+=1
@@ -314,15 +319,15 @@ while firstChoice in [1,2]:
             l1.makeLvl2()
         elif secondChoice==2: tutorial("tut_maker2.txt")
     elif firstChoice==1:
-        secondChoice=int(input("\nWould you like to play:\n1. Premade levels ('campaign')\n2. Custom levels\n3. How do I play?\n\n"))
-        if secondChoice==1:
+        secondChoice=input("\nWould you like to play:\n1. Premade levels ('campaign')\n2. Custom levels\n3. How do I play?\n\n")
+        if int(secondChoice.split()[0])==1:
             print("\n\nStarting the 'campaign'!\n\n")
             campaign=open("campaign.txt",'r')
-            start(campaign.readlines(),1,firstTime) 
+            start(campaign.readlines(),1,firstTime*secondChoice.split()[-1]!='n')
             campaign.seek(0)
             firstTime=False
             campaign.close()
-        elif secondChoice==2:
+        elif int(secondChoice)==2:
             custom=open("custom.txt",'r')
             detected=custom.readlines()
             custom.seek(0)
@@ -331,7 +336,7 @@ while firstChoice in [1,2]:
                 if thirdChoice>0 and thirdChoice<=len(detected): start([detected[thirdChoice-1]])
             else: print("\nThere are no custom levels yet, but you can make one!")
             custom.close()
-        elif secondChoice==3: tutorial("tut_game.txt")
+        elif int(secondChoice)==3: tutorial("tut_game.txt")
     firstChoice=int(input("\n\nWhat would you like to do next?\n1. Play\n2. Make level\n3. Exit\n\n"))
 
 mixerAlive=False
